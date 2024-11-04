@@ -1,0 +1,83 @@
+.code-block {
+  /* 基础样式 */
+  @apply p-4 rounded-lg bg-zinc-950 overflow-x-auto;
+}
+
+.code-block code {
+  @apply text-sm font-mono text-zinc-100;
+}
+
+/* 关键字 */
+.token.keyword {
+  @apply text-purple-400;
+}
+
+/* 字符串 */
+.token.string {
+  @apply text-green-400;
+}
+
+/* 函数名 */
+.token.function {
+  @apply text-blue-400;
+}
+
+/* 变量名 */
+.token.variable {
+  @apply text-orange-400;
+}
+
+/* 注释 */
+.token.comment {
+  @apply text-zinc-500;
+}
+
+/* VS Code Dark+ Theme inspired styles */
+.code-theme-dark {
+  /* 基础样式 */
+  @apply bg-[#1E1E1E] text-[#D4D4D4];
+  
+  /* 语法元素 */
+  --keyword-color: #569CD6;      /* 关键字 like import, const, async */
+  --type-color: #4EC9B0;         /* 类型和类名 */
+  --function-color: #DCDCAA;     /* 函数名 */
+  --string-color: #CE9178;       /* 字符串 */
+  --variable-color: #9CDCFE;     /* 变量名 */
+  --number-color: #B5CEA8;       /* 数字 */
+  --comment-color: #6A9955;      /* 注释 */
+  --operator-color: #D4D4D4;     /* 运算符 */
+  --punctuation-color: #D4D4D4;  /* 标点符号 */
+  
+  /* 增强可读性 */
+  @apply leading-relaxed tracking-wide;
+  
+  /* 代码块样式 */
+  @apply p-4 rounded-lg shadow-xl;
+  
+  /* 滚动条样式 */
+  scrollbar-width: thin;
+  scrollbar-color: #4A4A4A #1E1E1E;
+}
+
+/* 滚动条样式（Webkit浏览器） */
+.code-theme-dark::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+.code-theme-dark::-webkit-scrollbar-track {
+  @apply bg-[#1E1E1E];
+}
+
+.code-theme-dark::-webkit-scrollbar-thumb {
+  @apply bg-[#4A4A4A] rounded-full;
+}
+
+/* 代码行高亮 */
+.code-line-highlight {
+  @apply bg-[#282828] -mx-4 px-4;
+}
+
+/* 选中效果 */
+.code-theme-dark ::selection {
+  @apply bg-[#264F78] text-[#D4D4D4];
+} 

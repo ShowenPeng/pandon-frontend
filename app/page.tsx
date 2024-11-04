@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Wallet2, BarChart2, Shield, Zap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,12 +13,14 @@ export default function Home() {
             Web3 Payments Made Simple
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Accept crypto payments seamlessly with our enterprise-grade payment infrastructure. Built for modern businesses.
+            Create a link and receive crypto payments seamlessly with our payment infrastructure. Built for modern businesses.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gap-2">
-              Get Started <ArrowRight className="h-4 w-4" />
-            </Button>
+            <Link href="/dashboard">
+              <Button size="lg" className="gap-2">
+                Get Started <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="gap-2">
               View Demo <Zap className="h-4 w-4" />
             </Button>
@@ -28,7 +31,7 @@ export default function Home() {
       {/* Features Grid */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose CryptoFlow?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Pandon?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={<Wallet2 className="h-8 w-8" />}
@@ -38,7 +41,7 @@ export default function Home() {
             <FeatureCard
               icon={<Shield className="h-8 w-8" />}
               title="Enterprise Security"
-              description="Bank-grade security with multi-sig wallets and automated smart contract auditing."
+              description="We don't hold your funds. Enterprise security with non-custodial wallets and automated smart contract auditing."
             />
             <FeatureCard
               icon={<BarChart2 className="h-8 w-8" />}
@@ -59,8 +62,10 @@ export default function Home() {
                 Integrate crypto payments into your application with just a few lines of code. Our SDK handles all the complexity.
               </p>
               <pre className="p-4 rounded-lg bg-background overflow-x-auto">
-                <code className="text-sm">
-                  {`const payment = await cryptoflow.createPayment({
+                <code className="text-sm font-mono leading-relaxed">
+                  {`import { Pandon } from'@pandon/api;
+                  
+  const payment = await Pandon.createPayment({
   amount: "100",
   currency: "USDC",
   chain: "ethereum"

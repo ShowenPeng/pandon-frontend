@@ -16,9 +16,13 @@ export default function DashboardLayout({
   const router = useRouter();
 
   useEffect(() => {
-    if (!account && !isConnecting) {
-      router.push("/");
-    }
+    const redirectTimer = setTimeout(() => {
+      if (!account && !isConnecting) {
+        router.push("/");
+      }
+    }, 500);
+
+    return () => clearTimeout(redirectTimer);
   }, [account, isConnecting, router]);
 
   if (isConnecting) {

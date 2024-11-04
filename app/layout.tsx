@@ -8,8 +8,8 @@ import { Providers } from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CryptoFlow - Web3 Payment Platform',
-  description: 'Enterprise-grade cryptocurrency payment processing platform',
+  title: 'Pandon - Web3 Payment Infrastructure for Everyone',
+  description: 'Web3 payment infrastructure designed to be accessible to everyone without permission.',
 };
 
 export default function RootLayout({

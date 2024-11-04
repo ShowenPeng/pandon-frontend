@@ -9,9 +9,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">CryptoFlow</h3>
+            <h3 className="text-lg font-bold">Pandon</h3>
             <p className="text-sm text-muted-foreground">
-              Enterprise-grade cryptocurrency payment infrastructure for modern businesses.
+              Web3 payment infrastructure designed to be accessible to everyone without permission.
             </p>
             <div className="flex space-x-4">
               <Link href="https://twitter.com" className="text-muted-foreground hover:text-primary">
@@ -26,7 +26,7 @@ export function Footer() {
             </div>
           </div>
           
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -78,13 +78,13 @@ export function Footer() {
                 <Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         
         <div className="border-t mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} CryptoFlow. All rights reserved.
+              © {new Date().getFullYear()} Pandon. All rights reserved.
             </p>
             <div className="flex gap-8 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>

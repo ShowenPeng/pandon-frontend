@@ -11,10 +11,10 @@ export function NavigationMenu() {
       <div className="flex h-16 items-center px-4 container mx-auto">
         <div className="flex items-center space-x-4">
           <Link href="/" className="font-bold text-2xl">
-            CryptoFlow
+            Pandon
           </Link>
           <div className="hidden md:flex space-x-6 ml-6">
-            <Link href="/features" className="text-sm font-medium transition-colors hover:text-primary">
+            {/* <Link href="/features" className="text-sm font-medium transition-colors hover:text-primary">
               Features
             </Link>
             <Link href="/pricing" className="text-sm font-medium transition-colors hover:text-primary">
@@ -22,7 +22,7 @@ export function NavigationMenu() {
             </Link>
             <Link href="/docs" className="text-sm font-medium transition-colors hover:text-primary">
               Docs
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="ml-auto flex items-center space-x-4">
