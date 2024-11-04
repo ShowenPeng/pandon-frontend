@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { ethers } from 'ethers';
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
 
 export function useWallet() {
   const [account, setAccount] = useState<string | null>(null);
@@ -12,12 +12,14 @@ export function useWallet() {
   const [isMetaMaskInstalled, setIsMetaMaskInstalled] = useState(false);
 
   useEffect(() => {
-    setIsMetaMaskInstalled(typeof window !== 'undefined' && !!window.ethereum?.isMetaMask);
+    setIsMetaMaskInstalled(
+      typeof window !== "undefined" && !!window.ethereum?.isMetaMask,
+    );
   }, []);
 
   const connectWallet = async () => {
     if (!isMetaMaskInstalled) {
-      setError('MetaMask is required');
+      setError("MetaMask is required");
       return;
     }
 
@@ -26,13 +28,13 @@ export function useWallet() {
       const provider = new ethers.BrowserProvider(window.ethereum);
       const network = await provider.getNetwork();
       const accounts = await provider.send("eth_requestAccounts", []);
-      
+
       setAccount(accounts[0]);
       setChainId(Number(network.chainId));
       setProvider(provider);
       setError(null);
     } catch (err) {
-      setError('Failed to connect wallet');
+      setError("Failed to connect wallet");
       console.error(err);
     } finally {
       setIsConnecting(false);
@@ -55,17 +57,18 @@ export function useWallet() {
     };
 
     if (isMetaMaskInstalled) {
-      window.ethereum.on('accountsChanged', handleAccountsChanged);
-      window.ethereum.on('chainChanged', handleChainChanged);
+      window.ethereum.on("accountsChanged", handleAccountsChanged);
+      window.ethereum.on("chainChanged", handleChainChanged);
 
       // Check if already connected
-      window.ethereum.request({ method: 'eth_accounts' })
+      window.ethereum
+        .request({ method: "eth_accounts" })
         .then((accounts: string[]) => {
           if (accounts.length > 0) {
             setAccount(accounts[0]);
             const provider = new ethers.BrowserProvider(window.ethereum);
             setProvider(provider);
-            provider.getNetwork().then(network => {
+            provider.getNetwork().then((network) => {
               setChainId(Number(network.chainId));
             });
           }
@@ -74,8 +77,11 @@ export function useWallet() {
 
     return () => {
       if (window.ethereum) {
-        window.ethereum.removeListener('accountsChanged', handleAccountsChanged);
-        window.ethereum.removeListener('chainChanged', handleChainChanged);
+        window.ethereum.removeListener(
+          "accountsChanged",
+          handleAccountsChanged,
+        );
+        window.ethereum.removeListener("chainChanged", handleChainChanged);
       }
     };
   }, [isMetaMaskInstalled]);

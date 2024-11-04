@@ -13,7 +13,8 @@ export default function Home() {
             Web3 Payments Made Simple
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Create a link and receive crypto payments seamlessly with our payment infrastructure. Built for modern businesses.
+            Create a link and receive crypto payments seamlessly with our
+            payment infrastructure. Built for modern businesses.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/dashboard">
@@ -31,7 +32,9 @@ export default function Home() {
       {/* Features Grid */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Pandon?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Why Choose Pandon?
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={<Wallet2 className="h-8 w-8" />}
@@ -59,7 +62,8 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Simple Integration</h2>
               <p className="text-muted-foreground mb-6">
-                Integrate crypto payments into your application with just a few lines of code. Our SDK handles all the complexity.
+                Integrate crypto payments into your application with just a few
+                lines of code. Our SDK handles all the complexity.
               </p>
               <pre className="p-4 rounded-lg bg-background overflow-x-auto">
                 <code className="text-sm font-mono leading-relaxed">
@@ -88,7 +92,15 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="p-6 rounded-xl border bg-card">
       <div className="mb-4 text-primary">{icon}</div>

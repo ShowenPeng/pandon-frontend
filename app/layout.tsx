@@ -1,15 +1,16 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { NavigationMenu } from '@/components/navigation-menu';
-import { Footer } from '@/components/footer';
-import { Providers } from './providers';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { NavigationMenu } from "@/components/navigation-menu";
+import { Footer } from "@/components/footer";
+import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Pandon - Web3 Payment Infrastructure for Everyone',
-  description: 'Web3 payment infrastructure designed to be accessible to everyone without permission.',
+  title: "Pandon - Web3 Payment Infrastructure for Everyone",
+  description:
+    "Web3 payment infrastructure designed to be accessible to everyone without permission.",
 };
 
 export default function RootLayout({

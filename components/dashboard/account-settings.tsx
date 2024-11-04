@@ -78,7 +78,10 @@ export function AccountSettings() {
               <FormItem>
                 <FormLabel>Webhook URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="https://your-api.com/webhook" {...field} />
+                  <Input
+                    placeholder="https://your-api.com/webhook"
+                    {...field}
+                  />
                 </FormControl>
                 <FormDescription>
                   Receive payment notifications at this URL

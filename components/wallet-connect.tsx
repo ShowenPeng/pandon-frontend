@@ -17,13 +17,8 @@ import { useEffect, useState } from "react";
 export function WalletConnect() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
-  const { 
-    account, 
-    chainId, 
-    isConnecting, 
-    connectWallet, 
-    disconnectWallet 
-  } = useWallet();
+  const { account, chainId, isConnecting, connectWallet, disconnectWallet } =
+    useWallet();
 
   useEffect(() => {
     setMounted(true);

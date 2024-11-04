@@ -7,6 +7,8 @@ import { BarChart, Wallet2, ArrowUpDown, Users } from "lucide-react";
 import { useWallet } from "@/lib/web3/hooks";
 import { AnalyticsChart } from "@/components/dashboard/analytics-chart";
 import { PaymentHistory } from "@/components/dashboard/payment-history";
+import { Payments } from "@/components/dashboard/payments";
+import { CreatePayment } from "@/components/dashboard/create-payment";
 import { AccountSettings } from "@/components/dashboard/account-settings";
 import { DashboardHeader } from "@/components/dashboard/header";
 import { StatsCards } from "@/components/dashboard/stats-cards";
@@ -31,11 +33,16 @@ export default function DashboardPage() {
   return (
     <div className="container mx-auto py-8 px-4">
       <DashboardHeader />
-      
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-        <TabsList className="grid grid-cols-3 w-full max-w-[600px] mx-auto">
+
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="space-y-8"
+      >
+        <TabsList className="grid grid-cols-4 w-full max-w-[600px] mx-auto">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="payments">Payments</TabsTrigger>
+          <TabsTrigger value="payment-history">History</TabsTrigger>
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
 
@@ -48,6 +55,11 @@ export default function DashboardPage() {
         </TabsContent>
 
         <TabsContent value="payments">
+          <CreatePayment />
+          <Payments />
+        </TabsContent>
+
+        <TabsContent value="payment-history">
           <PaymentHistory />
         </TabsContent>
 
