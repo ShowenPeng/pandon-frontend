@@ -85,7 +85,7 @@ export default function PayDetails({ id: _id }: PayDetailsProps) {
     } catch (error) {
       console.error("Payment failed:", error);
       // Use toast from react-toastify
-      toast.error("Payment failed. Please try again.");
+      toast.error("Payment failed, please try again.");
     }
   };
 
