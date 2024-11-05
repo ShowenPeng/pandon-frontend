@@ -25,6 +25,7 @@ export function useWallet() {
 
     setIsConnecting(true);
     try {
+      if (!window.ethereum) throw new Error("No ethereum provider");
       const provider = new ethers.BrowserProvider(window.ethereum);
       const network = await provider.getNetwork();
       const accounts = await provider.send("eth_requestAccounts", []);
@@ -56,7 +57,7 @@ export function useWallet() {
       setChainId(Number(chainId));
     };
 
-    if (isMetaMaskInstalled) {
+    if (isMetaMaskInstalled && window.ethereum) {
       window.ethereum.on("accountsChanged", handleAccountsChanged);
       window.ethereum.on("chainChanged", handleChainChanged);
 
@@ -66,6 +67,7 @@ export function useWallet() {
         .then((accounts: string[]) => {
           if (accounts.length > 0) {
             setAccount(accounts[0]);
+            if (!window.ethereum) return;
             const provider = new ethers.BrowserProvider(window.ethereum);
             setProvider(provider);
             provider.getNetwork().then((network) => {
