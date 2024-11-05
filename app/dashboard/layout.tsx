@@ -18,7 +18,7 @@ export default function DashboardLayout({
   useEffect(() => {
     const redirectTimer = setTimeout(() => {
       if (!account && !isConnecting) {
-        router.push("/");
+        router.push("/dashboard");
       }
     }, 500);
 
